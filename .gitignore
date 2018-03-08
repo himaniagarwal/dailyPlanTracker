@@ -1,9 +1,6 @@
 .gradle/
 .idea/
-build.gradle
-build/
-gradle/
-*gradlew*
 javaGradleProject.iml
-settings.gradle
+.DS_Store
+build/
 

@@ -1,0 +1,33 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.3.RELEASE")
+    }
+}
+
+apply plugin: 'application'
+apply plugin: 'org.springframework.boot'
+
+jar {
+    baseName = 'javaProject'
+    version = '0.1.0'
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories{
+    mavenCentral()
+}
+
+dependencies {
+    def spring_boot_version = '1.5.3.RELEASE'
+    testCompile group: 'junit', name: 'junit', version: '4.8'
+    compile(group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: spring_boot_version) {
+        exclude group: 'ch.qos.logback', module: 'logback-core'
+    }
+}
+
+mainClassName = "com.app.App"
